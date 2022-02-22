@@ -1,4 +1,5 @@
 import UserTable from "./components/UserTable";
+import AddUserForm from './components/AddUserForm';
 import { useState} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -12,7 +13,7 @@ function App() {
 	
 	const [users, setUsers] = useState(usersData)
 	const addUser = (user) => {
-		user.id = users.length + 1
+		user.id = uuidv4();
 		setUsers([...users, user])
 	}
 
